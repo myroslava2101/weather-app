@@ -55,11 +55,14 @@ function formatDate(timestamp) {
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
   }
-  function getForecast(coordinates) {
-    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayForecast);
     
+    function getForecast(coordinates) {
+      let apiKey = "73db834fd3921f5dabcef50b83672889";
+      let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+      axios.get(apiUrl).then(displayForecast);
+    }
+    
+
 function displayTemperature (response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
