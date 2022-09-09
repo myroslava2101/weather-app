@@ -33,11 +33,6 @@ function formatDate(timestamp) {
     let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
     
-  
-    let days = ["Thu", "Fri", "Sat", "Sun"];
-    let forecastElement = document.querySelector("#forecast");
-  
- 
           let forecastHTML = `<div class="row">`;
           forecast.forEach(function (forecastDay, index) {
             if (index < 6) {
@@ -72,8 +67,8 @@ function formatDate(timestamp) {
   }
     
     function getForecast(coordinates) {
-      let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
-      let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+      let apiKey = "73db834fd3921f5dabcef50b83672889";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
       axios.get(apiUrl).then(displayForecast);
     }
     
@@ -103,7 +98,7 @@ humidityElement.innerHTML = response.data.main.humidity;
       getForecast(response.data.coord);
     }
 function search(city) {
-let apiKey= "c95d60a1e3adbeb286133f1ebebc2579";
+let apiKey= "73db834fd3921f5dabcef50b83672889";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then (displayTemperature);
 }
@@ -116,6 +111,6 @@ function handleSubmit(event) {
   
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", handleSubmit);
-  
-  search("New York");
+
+  search("Kyiv");
 
